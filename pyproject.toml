@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "matchday_demand_forecasting"
+version = "0.0.1"
+description = "We will be using historical sales data with Manchester United fixtures data aswell as other supposrting datasets to forecast which items on the menu are more likely to sell and how many of each."
+authors = [
+  { name = "Muhammad Ali Syed" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = "^=3.12"
+
+
+[tool.ruff]
+line-length = 99
+src = ["matchday_demand_forecasting"]
+include = ["pyproject.toml", "matchday_demand_forecasting/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["matchday_demand_forecasting"]
+force-sort-within-sections = true
+
